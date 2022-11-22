@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import axios from "axios";
 import {GetCountry} from "./types";
+import Countries from "./components/Country/Countries";
 
 const baseUrl = 'https://restcountries.com/v2/all?fields=alpha3Code,name';
 const countryUrl = 'https://restcountries.com/v2/alpha/';
@@ -28,9 +29,8 @@ function App() {
     fetchCountry().catch(console.error);
   }, [fetchCountry]);
 
-  console.log(countries)
   return (
-    <div>hi</div>
+    <Countries country={countries}/>
   );
 }
 
